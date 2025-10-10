@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SONIC GAMES</title>
+    <!-- Setting up fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+
+        .header img {
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        #nadpis {
+            font-family: "Comic Relief", system-ui;
+            text-align: left;
+            font-size: 72px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .header-slogan {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        body {
+            font-family: "Comic Relief", system-ui;
+            text-align: center;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .menu-item {
+            width: 150px;
+            border: 2px solid black;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: white;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .menu-item .title {
+            margin: 10px 0;
+        }
+
+        .menu-item .description {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .menu-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="sonic_icon.jpg" alt="Sonic">
+        <div>
+            <h1 id="nadpis">SONIC GAMES</h1>
+            <div class="header-slogan">PLAY OVER 200 SONIC GAMES</div>
+        </div>
+    </div>
+    <hr>
+    <div class="menu">
+        <a href="sonic_1.html" class="menu-item">
+            <img src="img/titles/Sonic1.png" alt="Sonic 1">
+            <div class="title">Sonic 1</div>
+            <div class="description">Play the original Sonic the Hedgehog rom for the Sega Genesis. This is the FULL game!</div>
+        </a>
+        <a href="sonic_2.html" class="menu-item">
+            <img src="img/titles/Sonic2.png" alt="Sonic 2">
+            <div class="title">Sonic 2</div>
+            <div class="description">Take a trip back in time with the full version of the Sega Genesis game Sonic the Hedgehog 2</div>
+        </a>
+        <a href="sonic_3_and_knuckles.html" class="menu-item">
+            <img src="img/titles/sonic3k.png" alt="Sonic 3 Complete">
+            <div class="title">Sonic 3 and Knuckles</div>
+            <div class="description">A combination game of Sonic and Knuckles and Sonic the Hedgehog 3 all rolled into one rom!</div>
+        </a>
+        <a href="sonic_delta.html" class="menu-item">
+            <img src="img/titles/sonicdeltanext40mb.jpg" alt="Sonic Delta Next">
+            <div class="title">Sonic Delta Next</div>
+            <div class="description">Experience the latest Sonic Delta game with new features and levels. A fan-made ROM with fresh Sonic challenges!</div>
+        </a>
+        <a href="sonic_2_pink.html" class="menu-item">
+            <img src="img/titles/Sonic2pink.png" alt="Sonic 2 Pink edition">
+            <div class="title">Sonic 2 Pink edition</div>
+            <div class="description">Finally Amy Rose gets her own Sonic game! You can choose between Amy Rose or Cream the rabbit.</div>
+        </a>
+        <a href="shadow.html" class="menu-item">
+            <img src="img/titles/shadow.png" alt="Shadow the hedgehog">
+            <div class="title">Shadow the hedgehog</div>
+            <div class="description">Play Sonic 1 but as Shadow in this fan sprite swap. The palettes of the enemies have also been changed as well.</div>
+        </a>
+    </div>
+</body>
+<a href="help.html" id="help-btn">Help</a>
+<style>
+    #help-btn {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        background: #0064ff;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 12px 32px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        text-decoration: none;
+        transition: background 0.2s;
+        z-index: 1000;
+    }
+    #help-btn:hover {
+        background: #0040a0;
+    }
+</style>
+
+</html>
