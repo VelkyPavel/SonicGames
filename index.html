@@ -1,99 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SONIC GAMES</title>
-    <!-- Setting up favicon -->
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon" href="sonic_icon.jpg">
-    <!-- Setting up fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Styles -->
+    <title>Sonic Games</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <style>
+        body {
+            background: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
         .header {
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            margin-top: 20px;
+            margin: 0 auto;
+            max-width: 1100px;
+            padding-top: 24px;
         }
-
         .header img {
-            height: 100px;
-            margin-right: 20px;
+            height: 110px;
+            margin-right: 18px;
         }
-
-        #nadpis {
-            font-family: "Comic Relief", system-ui;
-            text-align: left;
-            font-size: 72px;
+        .header-title {
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-size: 64px;
+            color: #0033cc;
             font-weight: bold;
             margin: 0;
+            text-align: left;
         }
-
         .header-slogan {
-            font-size: 24px;
-            margin-top: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            color: #222;
+            font-weight: bold;
+            margin-top: 4px;
+            margin-bottom: 0;
+            letter-spacing: 1px;
         }
-
-        body {
-            font-family: "Comic Relief", system-ui;
-            text-align: center;
+        hr {
+            border: none;
+            border-top: 2px solid #0033cc;
+            margin: 18px auto 24px auto;
+            max-width: 1100px;
         }
-
         .menu {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px 30px;
+            justify-items: center;
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
         }
-
+        @media (max-width: 1100px) {
+            .menu {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 900px;
+                gap: 40px 20px;
+            }
+        }
+        @media (max-width: 800px) {
+            .menu {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 500px;
+                gap: 30px 10px;
+            }
+            .menu-item {
+                width: 48vw;
+                min-width: 160px;
+                max-width: 240px;
+            }
+        }
+        @media (max-width: 500px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+                padding-top: 10px;
+            }
+            .header img {
+                height: 70px;
+                margin-right: 0;
+                margin-bottom: 8px;
+            }
+            .header-title {
+                font-size: 36px;
+                text-align: center;
+            }
+            .header-slogan {
+                font-size: 14px;
+                text-align: center;
+            }
+            hr {
+                max-width: 90vw;
+            }
+            .menu {
+                grid-template-columns: 1fr;
+                max-width: 98vw;
+                gap: 24px 0;
+            }
+            .menu-item {
+                width: 90vw;
+                min-width: 120px;
+                max-width: 98vw;
+            }
+            .menu-item img {
+                height: 120px;
+            }
+        }
         .menu-item {
-            width: 150px;
-            border: 2px solid black;
-            border-radius: 15px;
+            width: 260px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            margin: 10px;
-            font-size: 24px;
-            font-weight: bold;
-            background-color: white;
-            cursor: pointer;
+            background: none;
+            border: none;
+            box-shadow: none;
             text-decoration: none;
             color: black;
-            padding: 10px;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
         }
-
         .menu-item img {
             width: 100%;
-            height: auto;
+            height: 170px;
+            object-fit: cover;
             border-radius: 10px;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.32), 0 3px 12px rgba(0,51,204,0.18);
         }
-
         .menu-item .title {
-            margin: 10px 0;
-        }
-
-        .menu-item .description {
-            font-size: 14px;
+            margin: 14px 0 6px 0;
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-size: 26px;
+            color: #0033cc;
+            font-weight: bold;
             text-align: center;
+            text-decoration: underline;
         }
-
-        .menu-item:hover {
-            background-color: #f0f0f0;
+        .menu-item .description {
+            font-size: 16px;
+            text-align: center;
+            color: #222;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+        #help-btn {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            background: #0064ff;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 12px 32px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            text-decoration: none;
+            transition: background 0.2s;
+            z-index: 1000;
+        }
+        #help-btn:hover {
+            background: #0040a0;
         }
     </style>
 </head>
-
 <body>
     <div class="header">
         <img src="sonic_icon.jpg" alt="Sonic">
         <div>
-            <h1 id="nadpis">SONIC GAMES</h1>
+            <div class="header-title">Sonic Games</div>
             <div class="header-slogan">PLAY OVER 200 SONIC GAMES</div>
         </div>
     </div>
@@ -137,35 +216,19 @@
         <a href="sonic_classic_heroes.html" class="menu-item">
             <img src="img/titles/sonic_classic_heroes.png" alt="Sonic Classic Heroes">
             <div class="title">Sonic Classic Heroes</div>
-            <div class="description">Choose from Sonic, Tails, Knuckles or even play as all 3 at once! Has elements and abilities from Sonic 3 as well in Sonic 1!</div>
+            <div class="description">Choose from Sonic, Tails, Knuckles or even play as all 3 at once! Has elements and abilities from Sonic 3 as well in Sonic 1! Also play with 3 brand new characters!</div>
         </a>
         <a href="sonic_2_heroes.html" class="menu-item">
             <img src="img/titles/sonic2h.png" alt="Sonic 2 Heroes">
             <div class="title">Sonic 2 Heroes</div>
             <div class="description">Choose from Sonic, Tails, Knuckles or even play as all 3 at once! Has elements and abilities from Sonic 3 as well in Sonic 2!.</div>
         </a>
+        <a href="metal_sonic_rebooted.html" class="menu-item">
+            <img src="img/titles/metal_sonic_rebooted.png" alt="Metal Sonic Rebooted">
+            <div class="title">Metal Sonic Rebooted</div>
+            <div class="description">Dr Robotnik has built an army of badniks to search for the Chaos Emeralds. Metal Sonic must find them first!</div>
+        </a>
     </div>
+    <a href="help.html" id="help-btn">Help</a>
 </body>
-<a href="help.html" id="help-btn">Help</a>
-<style>
-    #help-btn {
-        position: fixed;
-        left: 20px;
-        bottom: 20px;
-        background: #0064ff;
-        color: #fff;
-        font-size: 20px;
-        font-weight: bold;
-        padding: 12px 32px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        text-decoration: none;
-        transition: background 0.2s;
-        z-index: 1000;
-    }
-    #help-btn:hover {
-        background: #0040a0;
-    }
-</style>
-
 </html>

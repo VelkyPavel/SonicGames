@@ -10,10 +10,146 @@
             margin: 0;
             padding: 0;
         }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.45);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-box {
+            background: #fff;
+            border-radius: 22px;
+            box-shadow: 0 8px 32px rgba(0,100,255,0.18);
+            max-width: 420px;
+            width: 90vw;
+            padding: 38px 28px 28px 28px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            font-family: "Comic Relief", system-ui;
+            animation: modalIn 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        @keyframes modalIn {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .modal-title {
+            font-size: 32px;
+            color: #0064ff;
+            font-weight: bold;
+            margin-bottom: 0;
+            letter-spacing: 1px;
+        }
+        .modal-hr {
+            border: none;
+            border-top: 2px dashed #b3d1ff;
+            margin: 10px auto 18px auto;
+            width: 70%;
+            opacity: 0.7;
+        }
+        .modal-content {
+            font-size: 18px;
+            color: #222;
+            min-height: 48px;
+            margin-bottom: 10px;
+        }
+        .controls-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 8px;
+        }
+        .key-box {
+            display: inline-block;
+            border: 2px solid #222;
+            border-radius: 5px;
+            background: #f8faff;
+            font-weight: bold;
+            font-size: 22px;
+            padding: 2px 14px;
+            margin-right: 4px;
+            margin-left: 4px;
+            box-shadow: 0 1px 4px rgba(0,100,255,0.04);
+            font-family: Arial, sans-serif;
+        }
+        .key-label {
+            font-size: 18px;
+            color: #222;
+            margin-left: 6px;
+            margin-right: 12px;
+        }
+        .arrow-box {
+            display: inline-block;
+            border: 2px solid #222;
+            border-radius: 5px;
+            background: #fff;
+            font-size: 22px;
+            font-weight: bold;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 28px;
+            margin: 0 2px;
+            vertical-align: middle;
+            box-shadow: 0 1px 4px rgba(0,100,255,0.04);
+        }
+        .arrow-label {
+            font-size: 18px;
+            color: #222;
+            margin-left: 10px;
+        }
+        .modal-btn {
+            background: #0064ff;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 12px 38px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+            font-family: "Comic Relief", system-ui;
+        }
+        .modal-btn:hover {
+            background: #0040a0;
+        }
     </style>
 </head>
 
 <body>
+    <div class="modal-overlay" id="controlsModal">
+        <div class="modal-box">
+            <div class="modal-title">Controls</div>
+            <hr class="modal-hr">
+            <div class="modal-content">
+                <div class="controls-row">
+                    <span class="key-box">S</span><span class="key-label">A</span>
+                    <span class="key-box">X</span><span class="key-label">B</span>
+                    <span class="key-box">Z</span><span class="key-label">C</span>
+                    <span class="key-box">Enter</span><span class="key-label">Start</span>
+                </div>
+                <div class="controls-row">
+                    <span class="arrow-box">↑</span>
+                    <span class="arrow-box">↓</span>
+                    <span class="arrow-box">←</span>
+                    <span class="arrow-box">→</span>
+                    <span class="arrow-label">Move</span>
+                </div>
+            </div>
+            <button class="modal-btn" onclick="document.getElementById('controlsModal').style.display='none'">Ok</button>
+        </div>
+    </div>
     <div style="width:98vw;height:100vh;max-width:98vw;float:left">
         <div id="game"></div>
     </div>
