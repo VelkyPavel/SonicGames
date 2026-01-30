@@ -1,3 +1,12 @@
 # Sonic Games Project
-## Official website: [Github](https://github.com/VelkyPavel/SonicGames), [Game](https://bit.ly/son1cgames) (if doesn't work then: [here](https://61b110f8-231b-459d-bc5c-4d438c927797-00-2focak2rmopb2.worf.replit.dev/))
-(We have now new web server - replit - the adress is super long so I created bitly link. If you we're using save stat in browser then the data does NOT come to this website - you will need to play from start or use old website - [here](http://sonic.xf.cz:8080). The old website will NOT being updated! New wbste don't have ads and it is more functionable)
+## Official website: [Github](https://github.com/VelkyPavel/SonicGames), Game (currently unviable)
+(There are many ways to still play this game, but I find this the easiest 👍)
+1. To play Sonic Games game, first download the project as a zip, then uzip it
+2. Install program called vscode
+3. Open vscode and install extension called "Five Star Live Server"
+4. Restart vscode
+5. Open folder with your unzipped game
+6. On the bottom click "Go Live" and this will open new window with the game (it will start a server)
+Done ✔️
+
+### THESE GAMES ARE NOT MADE BY ME! ALL CREDITS TO SEGA AND ROM HACKING COMMUNITY
